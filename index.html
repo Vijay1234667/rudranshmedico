@@ -38,6 +38,13 @@
 
 
 
+        /*  */
+        .navbar {
+            box-shadow: 0px 1px 31px 0px #00000014;
+            padding: 10px 0px;
+            background: #1a1a1a;
+            padding: 12px 0px;
+        }
         #navbar.scrolled {
             background-color: white;
         }
@@ -52,7 +59,7 @@
         }
 
         .navbar .navbar-nav a {
-            color: var(--text-white);
+            color: #000000;
             font-family: "Figtree", sans-serif;
             transition: color 0.3s ease;
             margin-right: 10px;
@@ -115,102 +122,6 @@
 
 
 
-        /* Navigation */
-        .navbar {
-            background: rgba(255, 255, 255, 0.98) !important;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .navbar.scrolled {
-            padding: 0.5rem 0;
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.5rem;
-            background: var(--medical-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-link {
-            font-weight: 500;
-            margin: 0 10px;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 50%;
-            background: var(--medical-gradient);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .nav-link:hover::after {
-            width: 80%;
-        }
-
-        .navbar-toggler {
-            border: none;
-            padding: 10px;
-        }
-
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-
-        .navbar-toggler-icon {
-            width: 25px;
-            height: 25px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .navbar-toggler-icon::before,
-        .navbar-toggler-icon::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background-color: #333;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-toggler-icon::before {
-            top: 50%;
-            transform: translateY(-50%) rotate(45deg);
-        }
-
-        .navbar-toggler-icon::after {
-            top: 50%;
-            transform: translateY(-50%) rotate(-45deg);
-        }
-
-        .navbar-toggler.collapsed .navbar-toggler-icon::before {
-            top: 0;
-            transform: rotate(0);
-        }
-
-        .navbar-toggler.collapsed .navbar-toggler-icon::after {
-            top: auto;
-            bottom: 0;
-            transform: rotate(0);
-        }
-
-        .navbar-toggler.collapsed .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 15h22'/%3e%3c/svg%3e");
-            background-position: center;
-            background-repeat: no-repeat;
-        }
 
         /* Hero Banner */
         .hero-section {
