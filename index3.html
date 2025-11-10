@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>रुद्रा मेडिकल हॉल - भव्य शुभारंभ</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0d6efd;
+            --secondary: #6c757d;
+            --success: #198754;
+            --info: #0dcaf0;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --medical-gradient: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .hindi-text {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: var(--medical-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background: var(--medical-gradient);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 10px;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Hero Banner */
+        .hero-section {
+            background: var(--medical-gradient);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 30px;
+        }
+
+        .opening-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero-image {
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: white;
+            padding: 80px 0;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: #00b4db;
+        }
+
+        .stat-icon {
+            font-size: 3rem;
+            background: var(--medical-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60%;
+            height: 4px;
+            background: var(--medical-gradient);
+            border-radius: 2px;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            border: 5px solid #00b4db;
+            padding: 5px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .degree-badge {
+            display: inline-block;
+            background: var(--medical-gradient);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border-color: #00b4db;
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--medical-gradient);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotateY(360deg);
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .product-body {
+            padding: 30px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--medical-gradient);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .form-control, .form-select {
+            border-radius: 10px;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #00b4db;
+            box-shadow: 0 0 0 0.2rem rgba(0, 180, 219, 0.25);
+        }
+
+        .btn-primary {
+            background: var(--medical-gradient);
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,180,219,0.3);
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            height: 450px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 80px 0 30px;
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-link {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: white;
+            padding-left: 10px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: white;
+            color: #1e3c72;
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 50px;
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand hindi-text" href="#">
+                <i class="fas fa-clinic-medical me-2"></i>रुद्रा मेडिकल हॉल
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hindi-text" href="#about">हमारे बारे में</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hindi-text" href="#services">सेवाएं</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hindi-text" href="#products">उत्पाद</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hindi-text" href="#contact">संपर्क करें</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="hero-content">
+                        <div class="opening-badge hindi-text">
+                            <i class="fas fa-star me-2"></i>भव्य शुभारंभ - 10.11.2025
+                        </div>
+                        <h1 class="hero-title hindi-text">रुद्रा मेडिकल हॉल</h1>
+                        <p class="hero-subtitle hindi-text">आपके स्वास्थ्य की देखभाल, हमारी प्राथमिकता</p>
+                        <p class="text-white hindi-text mb-4">जयनगर (मीरानी) राम भग मार्ट के सामने</p>
+                        <div class="d-flex gap-3 flex-wrap">
+                            <a href="#contact" class="btn btn-light btn-lg px-4">
+                                <i class="fas fa-phone me-2"></i>संपर्क करें
+                            </a>
+                            <a href="#about" class="btn btn-outline-light btn-lg px-4">
+                                <i class="fas fa-info-circle me-2"></i>और जानें
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="hero-image text-center">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect fill='%23667eea' width='400' height='400'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='100' fill='white' font-family='Arial'%3E🏥%3C/text%3E%3C/svg%3E" alt="Medical Store">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                        <div class="stat-number">1000+</div>
+                        <p class="text-muted mb-0 hindi-text">विभिन्न दवाइयां</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="stat-number">24/7</div>
+                        <p class="text-muted mb-0 hindi-text">सेवा उपलब्ध</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="stat-number">100%</div>
+                        <p class="text-muted mb-0 hindi-text">गुणवत्ता की गारंटी</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="profile-card">
+                        <div class="profile-image">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle fill='%23667eea' cx='100' cy='100' r='100'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='80' fill='white'%3E👨‍⚕️%3C/text%3E%3C/svg%3E" alt="Profile">
+                        </div>
+                        <h3 class="hindi-text mb-2">प्रो. तितीक यादव</h3>
+                        <div class="mb-3">
+                            <span class="degree-badge">B.Ph (AKTU Lucknow)</span>
+                            <span class="degree-badge">M.Ph (AKSU Satna)</span>
+                        </div>
+                        <p class="text-muted hindi-text mb-3">पंजीकृत फार्मासिस्ट</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <h2 class="section-title hindi-text mb-4">हमारे बारे में</h2>
+                    <p class="lead hindi-text mb-4">रुद्रा मेडिकल हॉल में आपका स्वागत है! हम आपके और आपके परिवार के स्वास्थ्य की देखभाल के लिए प्रतिबद्ध हैं।</p>
+                    
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start">
+                                <div class="me-3">
+                                    <div class="service-icon" style="width: 50px; height: 50px; font-size: 1.2rem;">
+                                        <i class="fas fa-certificate"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="hindi-text">प्रमाणित फार्मासिस्ट</h5>
+                                    <p class="text-muted hindi-text mb-0">अनुभवी और योग्य पेशेवर</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start">
+                                <div class="me-3">
+                                    <div class="service-icon" style="width: 50px; height: 50px; font-size: 1.2rem;">
+                                        <i class="fas fa-shipping-fast"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="hindi-text">तेज़ डिलीवरी</h5>
+                                    <p class="text-muted hindi-text mb-0">घर पर दवा पहुंचाने की सुविधा</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info hindi-text" role="alert">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <strong>विशेष सूचना:</strong> हमारी दुकान में सभी प्रकार की एलोपैथिक और आयुर्वेदिक दवाइयां उपलब्ध हैं।
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title hindi-text">हमारी सेवाएं</h2>
+                <p class="lead text-muted hindi-text">आपके स्वास्थ्य के लिए व्यापक समाधान</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-prescription-bottle-alt"></i>
+                        </div>
+                        <h4 class="hindi-text mb-3">प्रिस्क्रिप्शन दवाएं</h4>
+                        <p class="text-muted hindi-text">सभी प्रकार की डॉक्टर द्वारा लिखी गई दवाइयां उपलब्ध</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4 class="hindi-text mb-3">आयुर्वेदिक उत्पाद</h4>
+                        <p class="text-muted hindi-text">प्राकृतिक और हर्बल उत्पादों का विस्तृत चयन</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-user-nurse"></i>
+                        </div>
+                        <h4 class="hindi-text mb-3">स्वास्थ्य परामर्श</h4>
+                        <p class="text-muted hindi-text">मुफ्त दवा और स्वास्थ्य से संबंधित परामर्श</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h4 class="hindi-text mb-3">होम डिलीवरी</h4>
+                        <p class="text-muted hindi-text">आपके घर तक दवाइयां पहुंचाने की सुविधा</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h4 class="hindi-text mb-3">स्वास्थ्य जांच</h4>
+                        <p class="text-muted hindi-text">ब्लड प्रेशर, शुगर लेवल आदि की जांच</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-phone-volume"></i>
+                        </div>
+                        <h4 class="hindi-text mb-3">24/7 सहायता</h4>
+                        <p class="text-muted hindi-text">किसी भी समय हमसे संपर्क करें</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title hindi-text">हमारे उत्पाद</h2>
+                <p class="lead text-muted hindi-text">गुणवत्ता युक्त दवाइयां और स्वास्थ्य उत्पाद</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-capsules"></i>
+                        </div>
+                        <div class="product-body">
+                            <h4 class="hindi-text mb-3">एलोपैथिक दवाएं</h4>
+                            <p class="text-muted hindi-text mb-3">सभी प्रकार की एलोपैथिक दवाइयां और टैबलेट्स</p>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="badge bg-success hindi-text">उपलब्ध</span>
+                                <a href="#contact" class="btn btn-sm btn-outline-primary hindi-text">पूछताछ करें</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-mortar-pestle"></i>
+                        </div>
+                        <div class="product-body">
+                            <h4 class="hindi-text mb-3">आयुर्वेदिक दवाएं</h4>
+                            <p class="text-muted hindi-text mb-3">प्राकृतिक और हर्बल उत्पाद</p>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="badge bg-success hindi-text">उपलब्ध</span>
+                                <a href="#contact" class="btn btn-sm btn-outline-primary hindi-text">पूछताछ करें</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-syringe"></i>
+                        </div>
+                        <div class="product-body">
+                            <h4 class="hindi-text mb-3">इंजेक्शन और सर्जिकल</h4>
+                            <p class="text-muted hindi-text mb-3">सर्जिकल उपकरण और इंजेक्शन</p>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="badge bg-success hindi-text">उपलब्ध</span>
+                                <a href="#contact" class="btn btn-sm btn-outline-primary hindi-text">पूछताछ करें</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <div class="product-body">
+                            <h4 class="hindi-text mb-3">बेबी केयर प्रोडक्ट्स</h4>
+                            <p class="text-muted hindi-text mb-3">शिशुओं के लिए विशेष उत्पाद</p>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="badge bg-success hindi-text">उपलब्ध</span>
+                                <a href="#contact" class="btn btn-sm btn-outline-primary hindi-text">पूछताछ करें</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-hand-holding-medical"></i>
+                        </div>
+                        <div class="product-body">
+                            <h4 class="hindi-text mb-3">फर्स्ट एड किट</h4>
+                            <p class="text-muted hindi-text mb-3">आपातकालीन चिकित्सा सामग्री</p>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="badge bg-success hindi-text">उपलब्ध</span>
+                                <a href="#contact" class="btn btn-sm btn-outline-primary hindi-text">पूछताछ करें</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <div class="product-body">
+                            <h4 class="hindi-text mb-3">कॉस्मेटिक उत्पाद</h4>
+                            <p class="text-muted hindi-text mb-3">त्वचा और बालों की देखभाल</p>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="badge bg-success hindi-text">उपलब्ध</span>
+                                <a href="#contact" class="btn btn-sm btn-outline-primary hindi-text">पूछताछ करें</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title hindi-text">संपर्क करें</h2>
+                <p class="lead text-muted hindi-text">हम आपकी सेवा के लिए हमेशा तैयार हैं</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-right">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h5 class="hindi-text mb-3">फ़ोन नंबर</h5>
+                        <p class="mb-2"><strong>8694949450</strong></p>
+                        <p class="text-muted hindi-text">सोमवार - रविवार: 24x7 खुला</p>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h5 class="hindi-text mb-3">पता</h5>
+                        <p class="mb-2 hindi-text"><strong>जयनगर (मीरानी)</strong></p>
+                        <p class="text-muted hindi-text">राम भग मार्ट के सामने</p>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-left">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h5 class="hindi-text mb-3">ईमेल</h5>
+                        <p class="mb-2"><strong>rudramedical@gmail.com</strong></p>
+                        <p class="text-muted hindi-text">हमें कभी भी लिखें</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                    <div class="contact-card">
+                        <h4 class="hindi-text mb-4">हमें संदेश भेजें</h4>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label hindi-text">नाम</label>
+                                    <input type="text" class="form-control" placeholder="अपना नाम दर्ज करें">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label hindi-text">फ़ोन नंबर</label>
+                                    <input type="tel" class="form-control" placeholder="अपना नंबर दर्ज करें">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label hindi-text">ईमेल</label>
+                                    <input type="email" class="form-control" placeholder="अपना ईमेल दर्ज करें">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label hindi-text">संदेश</label>
+                                    <textarea class="form-control" rows="5" placeholder="अपना संदेश यहाँ लिखें"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100 hindi-text">
+                                        <i class="fas fa-paper-plane me-2"></i>संदेश भेजें
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title hindi-text">हमारा स्थान</h2>
+                <p class="lead text-muted hindi-text">जयनगर (मीरानी) राम भग मार्ट के सामने</p>
+            </div>
+            <div data-aos="fade-up">
+                <div class="map-container">
+                    <div class="text-center">
+                        <i class="fas fa-map-marked-alt" style="font-size: 4rem; color: #00b4db; margin-bottom: 20px;"></i>
+                        <h4 class="hindi-text mb-3">Google Map यहाँ एम्बेड होगा</h4>
+                        <p class="text-muted hindi-text">आप बाद में अपना Google Maps लिंक यहाँ जोड़ सकते हैं</p>
+                        <p class="text-muted">
+                            <small>
+                                &lt;iframe src="YOUR_GOOGLE_MAPS_EMBED_URL" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"&gt;&lt;/iframe&gt;
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="footer-title hindi-text">
+                        <i class="fas fa-clinic-medical me-2"></i>रुद्रा मेडिकल हॉल
+                    </h3>
+                    <p class="text-white-50 hindi-text mb-4">आपके स्वास्थ्य की देखभाल, हमारी प्राथमिकता। हम आपको सर्वोत्तम गुणवत्ता की दवाइयां और स्वास्थ्य सेवाएं प्रदान करने के लिए प्रतिबद्ध हैं।</p>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <h5 class="footer-title hindi-text">त्वरित लिंक</h5>
+                    <a href="#home" class="footer-link hindi-text">होम</a>
+                    <a href="#about" class="footer-link hindi-text">हमारे बारे में</a>
+                    <a href="#services" class="footer-link hindi-text">सेवाएं</a>
+                    <a href="#products" class="footer-link hindi-text">उत्पाद</a>
+                    <a href="#contact" class="footer-link hindi-text">संपर्क करें</a>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <h5 class="footer-title hindi-text">हमारी सेवाएं</h5>
+                    <a href="#" class="footer-link hindi-text">प्रिस्क्रिप्शन दवाएं</a>
+                    <a href="#" class="footer-link hindi-text">आयुर्वेदिक उत्पाद</a>
+                    <a href="#" class="footer-link hindi-text">स्वास्थ्य परामर्श</a>
+                    <a href="#" class="footer-link hindi-text">होम डिलीवरी</a>
+                    <a href="#" class="footer-link hindi-text">24/7 सहायता</a>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <h5 class="footer-title hindi-text">संपर्क जानकारी</h5>
+                    <p class="text-white-50 mb-2">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        <span class="hindi-text">जयनगर (मीरानी), राम भग मार्ट के सामने</span>
+                    </p>
+                    <p class="text-white-50 mb-2">
+                        <i class="fas fa-phone me-2"></i>
+                        8694949450
+                    </p>
+                    <p class="text-white-50 mb-2">
+                        <i class="fas fa-envelope me-2"></i>
+                        rudramedical@gmail.com
+                    </p>
+                    <p class="text-white-50 mb-0">
+                        <i class="fas fa-clock me-2"></i>
+                        <span class="hindi-text">24x7 खुला</span>
+                    </p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p class="mb-0 hindi-text">
+                    © 2025 रुद्रा मेडिकल हॉल। सर्वाधिकार सुरक्षित। | 
+                    <span class="hindi-text">भव्य शुभारंभ: 10.11.2025</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        navbarCollapse.classList.remove('show');
+                    }
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('धन्यवाद! हम जल्द ही आपसे संपर्क करेंगे।');
+            this.reset();
+        });
+
+        // Add animation to stats numbers
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const target = stat.textContent;
+                        stat.textContent = '0';
+                        
+                        const updateCount = () => {
+                            const current = parseInt(stat.textContent);
+                            const targetNum = parseInt(target);
+                            const increment = targetNum / 50;
+                            
+                            if (current < targetNum) {
+                                stat.textContent = Math.ceil(current + increment) + (target.includes('+') ? '+' : target.includes('%') ? '%' : '');
+                                setTimeout(updateCount, 30);
+                            } else {
+                                stat.textContent = target;
+                            }
+                        };
+                        
+                        updateCount();
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+    </script>
+</body>
+</html>
