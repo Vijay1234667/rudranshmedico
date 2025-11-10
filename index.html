@@ -33,7 +33,87 @@
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
         }
-        
+
+
+
+
+
+        #navbar.scrolled {
+            background-color: white;
+        }
+
+        #navbar.scrolled .navbar-nav a {
+            color: black;
+            transition: color 0.3s ease;
+        }
+
+        #navbar.scrolled .custom-toggler span {
+            background-color: #000000;
+        }
+
+        .navbar .navbar-nav a {
+            color: var(--text-white);
+            font-family: "Figtree", sans-serif;
+            transition: color 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .custom-toggler {
+            width: 30px;
+            height: 24px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .custom-toggler span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 2px;
+            opacity: 1;
+            left: 0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #nav-icon.dark-toggler {
+            background-color: black;
+        }
+
+        .custom-toggler span:nth-child(1) {
+            top: 0px;
+        }
+
+        .custom-toggler span:nth-child(2),
+        .custom-toggler span:nth-child(3) {
+            top: 10px;
+        }
+
+        .custom-toggler span:nth-child(4) {
+            top: 20px;
+        }
+
+        .custom-toggler.open span:nth-child(1) {
+            transform: rotate(45deg);
+            top: 10px;
+        }
+
+        .custom-toggler.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .custom-toggler.open span:nth-child(3) {
+            opacity: 0;
+        }
+
+        .custom-toggler.open span:nth-child(4) {
+            transform: rotate(-45deg);
+            top: 10px;
+        }
+
+
 
         /* Navigation */
         .navbar {
@@ -560,9 +640,18 @@
             <a class="navbar-brand" href="#">
                 <i class="fas fa-clinic-medical me-2"></i>Rudransh Medical Store
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+
+            <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <div class="custom-toggler" id="nav-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -657,8 +746,7 @@
                 <div class="col-lg-5" data-aos="fade-right">
                     <div class="profile-card">
                         <div class="profile-image">
-                            <img src="./images/IMG_20241222_100922.jpg"
-                                alt="Vivek Yadav">
+                            <img src="./images/IMG_20241222_100922.jpg" alt="Vivek Yadav">
                         </div>
                         <h3 class="mb-2">Mr. Vivek Yadav</h3>
                         <div class="mb-3">
@@ -952,12 +1040,12 @@
                 <div class="col-md-12">
                     <div data-aos="fade-up">
                         <div>
-                          
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57464.66247638629!2d83.07407302376214!3d25.818699392397427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3991c6566ebf3c97%3A0x3b1106045684d176!2sJigini%2C%20Uttar%20Pradesh%20276204%2C%20India!5e0!3m2!1sen!2snl!4v1762761386453!5m2!1sen!2snl"
-                                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                         
+
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57464.66247638629!2d83.07407302376214!3d25.818699392397427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3991c6566ebf3c97%3A0x3b1106045684d176!2sJigini%2C%20Uttar%20Pradesh%20276204%2C%20India!5e0!3m2!1sen!2snl!4v1762761386453!5m2!1sen!2snl"
+                                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+
                         </div>
                     </div>
                 </div>
@@ -1039,6 +1127,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <!-- AOS JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script src="./js/script.js"></script>
 
     <script>
         // Initialize AOS
